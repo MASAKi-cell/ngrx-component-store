@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { CounterStore } from './component-store';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  providers: [CounterStore]
 })
 export class AppComponent {
-  title = 'ngrx-component-store';
+
+  constructor(private readonly counterStore: CounterStore){
+
+  }
+
+  readonly count$ = this.counterStore.count$
+
 }
