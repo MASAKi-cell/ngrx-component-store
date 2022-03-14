@@ -23,7 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'ngrx-component-store'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngrx-component-store');
   });
 
   it('should render title', () => {

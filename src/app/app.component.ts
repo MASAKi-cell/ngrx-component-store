@@ -5,14 +5,16 @@ import { CounterStore } from './component-store';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
-  providers: [CounterStore]
+  providers: [CounterStore],
 })
 export class AppComponent {
 
-  constructor(private readonly counterStore: CounterStore){
-
-  }
+  constructor(private readonly counterStore: CounterStore){}
 
   readonly count$ = this.counterStore.count$
+
+  onClickAddButton(): any{
+    this.counterStore.add();
+  }
 
 }

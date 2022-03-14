@@ -13,4 +13,7 @@ export class CounterStore extends ComponentStore<Counter> {
   // read state
   readonly count$: Observable<number> = this.select((state) => state.count);
 
+  // update state
+  readonly add = this.updater((state) => ({ count: state.count + 1 }));
+
 }
